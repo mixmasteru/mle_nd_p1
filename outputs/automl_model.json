@@ -1,0 +1,231 @@
+{
+  "runId": "AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_27",
+  "runUuid": "85399464-033d-4fee-87c5-d536b2f7ae2d",
+  "parentRunUuid": "001bd710-a7c3-4172-8b2e-c979fcf177b4",
+  "rootRunUuid": "001bd710-a7c3-4172-8b2e-c979fcf177b4",
+  "target": "reg-cluster",
+  "status": "Completed",
+  "parentRunId": "AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3",
+  "startTimeUtc": "2020-12-07T14:17:17.733Z",
+  "endTimeUtc": "2020-12-07T14:18:27.979Z",
+  "error": null,
+  "warnings": null,
+  "tags": {
+    "_aml_system_azureml.automlComponent": "AutoML",
+    "_aml_system_ComputeTargetStatus": "{\"AllocationState\":\"steady\",\"PreparingNodeCount\":0,\"RunningNodeCount\":0,\"CurrentNodeCount\":1}",
+    "ensembled_iterations": "[0, 1, 13, 3, 9, 11, 19, 20]",
+    "ensembled_algorithms": "['LightGBM', 'XGBoostClassifier', 'SGD', 'SGD', 'SGD', 'SGD', 'ExtremeRandomTrees', 'RandomForest']",
+    "ensemble_weights": "[0.2, 0.3333333333333333, 0.06666666666666667, 0.06666666666666667, 0.06666666666666667, 0.06666666666666667, 0.13333333333333333, 0.06666666666666667]",
+    "best_individual_pipeline_score": "0.916935202752593",
+    "best_individual_iteration": "0",
+    "_aml_system_automl_is_child_run_end_telemetry_event_logged": "True",
+    "model_explain_run_id": "AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_ModelExplain",
+    "model_explanation": "True"
+  },
+  "properties": {
+    "runTemplate": "automl_child",
+    "pipeline_id": "__AutoML_Ensemble__",
+    "pipeline_spec": "{\"pipeline_id\":\"__AutoML_Ensemble__\",\"objects\":[{\"module\":\"azureml.train.automl.ensemble\",\"class_name\":\"Ensemble\",\"spec_class\":\"sklearn\",\"param_args\":[],\"param_kwargs\":{\"automl_settings\":\"{'task_type':'classification','primary_metric':'accuracy','verbosity':20,'ensemble_iterations':15,'is_timeseries':False,'name':'automl-experiment','compute_target':'reg-cluster','subscription_id':'c1dcf523-8ab0-429f-8dba-143a6c49ec84','region':'southcentralus','spark_service':None}\",\"ensemble_run_id\":\"AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_27\",\"experiment_name\":\"automl-experiment\",\"workspace_name\":\"quick-starts-ws-129637\",\"subscription_id\":\"c1dcf523-8ab0-429f-8dba-143a6c49ec84\",\"resource_group_name\":\"aml-quickstarts-129637\"}}]}",
+    "training_percent": "100",
+    "predicted_cost": null,
+    "iteration": "27",
+    "_aml_system_scenario_identification": "Remote.Child",
+    "_azureml.ComputeTargetType": "amlcompute",
+    "ContentSnapshotId": "86e29b21-2f7f-4deb-8e48-99477d55a099",
+    "ProcessInfoFile": "azureml-logs/process_info.json",
+    "ProcessStatusFile": "azureml-logs/process_status.json",
+    "run_template": "automl_child",
+    "run_preprocessor": "",
+    "run_algorithm": "VotingEnsemble",
+    "conda_env_data_location": "aml://artifact/ExperimentRun/dcid.AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_27/outputs/conda_env_v_1_0_0.yml",
+    "model_data_location": "aml://artifact/ExperimentRun/dcid.AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_27/outputs/model.pkl",
+    "model_size_on_disk": "680400",
+    "scoring_data_location": "aml://artifact/ExperimentRun/dcid.AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_27/outputs/scoring_file_v_1_0_0.py",
+    "model_exp_support": "True",
+    "pipeline_graph_version": "1.0.0",
+    "model_name": "AutoML2b335b84927",
+    "staticProperties": "{}",
+    "score": "0.9176357880688271",
+    "run_properties": "classification_labels=None,\n                              estimators=[('0',\n                                           Pipeline(memory=None,\n                                                    steps=[('maxabsscaler',\n                                                            MaxAbsScaler(copy=True",
+    "pipeline_script": "{\"pipeline_id\":\"__AutoML_Ensemble__\",\"objects\":[{\"module\":\"azureml.train.automl.ensemble\",\"class_name\":\"Ensemble\",\"spec_class\":\"sklearn\",\"param_args\":[],\"param_kwargs\":{\"automl_settings\":\"{'task_type':'classification','primary_metric':'accuracy','verbosity':20,'ensemble_iterations':15,'is_timeseries':False,'name':'automl-experiment','compute_target':'reg-cluster','subscription_id':'c1dcf523-8ab0-429f-8dba-143a6c49ec84','region':'southcentralus','spark_service':None}\",\"ensemble_run_id\":\"AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_27\",\"experiment_name\":\"automl-experiment\",\"workspace_name\":\"quick-starts-ws-129637\",\"subscription_id\":\"c1dcf523-8ab0-429f-8dba-143a6c49ec84\",\"resource_group_name\":\"aml-quickstarts-129637\"}}]}",
+    "training_type": "MeanCrossValidation",
+    "num_classes": "",
+    "framework": "sklearn",
+    "fit_time": "30",
+    "goal": "accuracy_max",
+    "class_labels": "",
+    "primary_metric": "accuracy",
+    "errors": "{}",
+    "fitted_pipeline": "Pipeline(memory=None,\n         steps=[('datatransformer',\n                 DataTransformer(enable_dnn=None, enable_feature_sweeping=None,\n                                 feature_sweeping_config=None,\n                                 feature_sweeping_timeout=None,\n                                 featurization_config=None, force_text_dnn=None,\n                                 is_cross_validation=None,\n                                 is_onnx_compatible=None, logger=None,\n                                 observer=None, task=None, working_dir=None)),\n                ('prefittedsoftvotingclassifier',...\n                                                                                                    min_samples_split=0.10368421052631578,\n                                                                                                    min_weight_fraction_leaf=0.0,\n                                                                                                    n_estimators=10,\n                                                                                                    n_jobs=1,\n                                                                                                    oob_score=False,\n                                                                                                    random_state=None,\n                                                                                                    verbose=0,\n                                                                                                    warm_start=False))],\n                                                                     verbose=False))],\n                                               flatten_transform=None,\n                                               weights=[0.2, 0.3333333333333333,\n                                                        0.06666666666666667,\n                                                        0.06666666666666667,\n                                                        0.06666666666666667,\n                                                        0.06666666666666667,\n                                                        0.13333333333333333,\n                                                        0.06666666666666667]))],\n         verbose=False)",
+    "friendly_errors": "{}",
+    "onnx_model_resource": "{}",
+    "error_code": "",
+    "failure_reason": "",
+    "feature_skus": "automatedml_sdk_guardrails",
+    "dependencies_versions": "{\"azureml-train-automl-runtime\": \"1.18.0.post1\", \"azureml-train-automl-client\": \"1.18.0\", \"azureml-telemetry\": \"1.18.0\", \"azureml-pipeline-core\": \"1.18.0\", \"azureml-model-management-sdk\": \"1.0.1b6.post1\", \"azureml-interpret\": \"1.18.0\", \"azureml-defaults\": \"1.18.0\", \"azureml-dataset-runtime\": \"1.18.0\", \"azureml-dataprep\": \"2.4.4\", \"azureml-dataprep-rslex\": \"1.2.3\", \"azureml-dataprep-native\": \"24.0.0\", \"azureml-core\": \"1.18.0.post2\", \"azureml-automl-runtime\": \"1.18.0.post2\", \"azureml-automl-core\": \"1.18.0.post1\"}",
+    "num_cores": "2",
+    "num_logical_cores": "2",
+    "peak_memory_usage": "541140",
+    "vm_configuration": "Intel(R) Xeon(R) Platinum 8171M CPU @ 2.60GHz",
+    "core_hours": "0.0073906147222222215"
+  },
+  "inputDatasets": [],
+  "outputDatasets": [],
+  "runDefinition": {
+    "script": "automl_driver.py",
+    "useAbsolutePath": false,
+    "arguments": [],
+    "sourceDirectoryDataStore": null,
+    "framework": "Python",
+    "communicator": "None",
+    "target": "reg-cluster",
+    "dataReferences": {},
+    "data": {},
+    "outputData": {},
+    "jobName": null,
+    "maxRunDurationSeconds": null,
+    "nodeCount": 1,
+    "priority": null,
+    "environment": {
+      "name": "AutoML-AzureML-AutoML",
+      "version": "Autosave_2020-12-07T13:37:40Z_8e8b4e26",
+      "python": {
+        "interpreterPath": "python",
+        "userManagedDependencies": false,
+        "condaDependencies": {
+          "channels": [
+            "anaconda",
+            "conda-forge",
+            "pytorch"
+          ],
+          "dependencies": [
+            "python=3.6.2",
+            {
+              "pip": [
+                "azureml-core==1.18.0.post2",
+                "azureml-pipeline-core==1.18.0",
+                "azureml-telemetry==1.18.0",
+                "azureml-defaults==1.18.0",
+                "azureml-interpret==1.18.0",
+                "azureml-automl-core==1.18.0.post1",
+                "azureml-automl-runtime==1.18.0.post2",
+                "azureml-train-automl-client==1.18.0",
+                "azureml-train-automl-runtime==1.18.0.post1",
+                "azureml-dataset-runtime==1.18.0",
+                "inference-schema",
+                "py-cpuinfo==5.0.0",
+                "boto3==1.15.18",
+                "botocore==1.18.18"
+              ]
+            },
+            "numpy~=1.18.0",
+            "scikit-learn==0.22.1",
+            "pandas~=0.25.0",
+            "py-xgboost<=0.90",
+            "fbprophet==0.5",
+            "holidays==0.9.11",
+            "setuptools-git",
+            "psutil>5.0.0,<6.0.0"
+          ],
+          "name": "azureml_7cf2b5eebfc9a832d561ce064cfbc38b"
+        },
+        "baseCondaEnvironment": null
+      },
+      "environmentVariables": {
+        "EXAMPLE_ENV_VAR": "EXAMPLE_VALUE"
+      },
+      "docker": {
+        "baseImage": "mcr.microsoft.com/azureml/intelmpi2018.3-ubuntu16.04:20201113.v1",
+        "platform": {
+          "os": "Linux",
+          "architecture": "amd64"
+        },
+        "baseDockerfile": null,
+        "baseImageRegistry": {
+          "address": null,
+          "username": null,
+          "password": null
+        },
+        "enabled": true,
+        "arguments": []
+      },
+      "spark": {
+        "repositories": [],
+        "packages": [],
+        "precachePackages": true
+      },
+      "inferencingStackVersion": null
+    },
+    "history": {
+      "outputCollection": true,
+      "directoriesToWatch": [
+        "logs"
+      ],
+      "enableMLflowTracking": true
+    },
+    "spark": {
+      "configuration": {
+        "spark.app.name": "Azure ML Experiment",
+        "spark.yarn.maxAppAttempts": "1"
+      }
+    },
+    "parallelTask": {
+      "maxRetriesPerWorker": 0,
+      "workerCountPerNode": 1,
+      "terminalExitCodes": null,
+      "configuration": {}
+    },
+    "amlCompute": {
+      "name": null,
+      "vmSize": null,
+      "retainCluster": false,
+      "clusterMaxNodeCount": null
+    },
+    "aiSuperComputer": {
+      "instanceType": null,
+      "frameworkImage": null,
+      "imageVersion": null,
+      "location": null
+    },
+    "tensorflow": {
+      "workerCount": 1,
+      "parameterServerCount": 1
+    },
+    "mpi": {
+      "processCountPerNode": 1
+    },
+    "hdi": {
+      "yarnDeployMode": "Cluster"
+    },
+    "containerInstance": {
+      "region": null,
+      "cpuCores": 2,
+      "memoryGb": 3.5
+    },
+    "exposedPorts": null,
+    "docker": {
+      "useDocker": true,
+      "sharedVolumes": true,
+      "shmSize": "2g",
+      "arguments": []
+    },
+    "cmk8sCompute": {
+      "configuration": {}
+    }
+  },
+  "logFiles": {
+    "azureml-logs/55_azureml-execution-tvmps_fd1e60b52b4879c259e9c6a4b507f80809b0542e3ee1040966e0c03997f2a459_d.txt": "https://mlstrg129637.blob.core.windows.net/azureml/ExperimentRun/dcid.AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_27/azureml-logs/55_azureml-execution-tvmps_fd1e60b52b4879c259e9c6a4b507f80809b0542e3ee1040966e0c03997f2a459_d.txt?sv=2019-02-02&sr=b&sig=DKQ4cMFNeW4a%2BR5aPcaUnEKg2dinNrcuChfnr4DEXH4%3D&st=2020-12-07T14%3A09%3A07Z&se=2020-12-07T22%3A19%3A07Z&sp=r",
+    "azureml-logs/65_job_prep-tvmps_fd1e60b52b4879c259e9c6a4b507f80809b0542e3ee1040966e0c03997f2a459_d.txt": "https://mlstrg129637.blob.core.windows.net/azureml/ExperimentRun/dcid.AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_27/azureml-logs/65_job_prep-tvmps_fd1e60b52b4879c259e9c6a4b507f80809b0542e3ee1040966e0c03997f2a459_d.txt?sv=2019-02-02&sr=b&sig=d%2Bc0KB72qq1Pcd%2FpPSgNLsUDm8x%2BZv99mdxXqoMDsMI%3D&st=2020-12-07T14%3A09%3A07Z&se=2020-12-07T22%3A19%3A07Z&sp=r",
+    "azureml-logs/70_driver_log.txt": "https://mlstrg129637.blob.core.windows.net/azureml/ExperimentRun/dcid.AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_27/azureml-logs/70_driver_log.txt?sv=2019-02-02&sr=b&sig=faSRkQJJeZ9uT0gNnRvi%2FzPIY2Gw6mrbnZ%2FAAfYY%2Bpo%3D&st=2020-12-07T14%3A09%3A07Z&se=2020-12-07T22%3A19%3A07Z&sp=r",
+    "azureml-logs/75_job_post-tvmps_fd1e60b52b4879c259e9c6a4b507f80809b0542e3ee1040966e0c03997f2a459_d.txt": "https://mlstrg129637.blob.core.windows.net/azureml/ExperimentRun/dcid.AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_27/azureml-logs/75_job_post-tvmps_fd1e60b52b4879c259e9c6a4b507f80809b0542e3ee1040966e0c03997f2a459_d.txt?sv=2019-02-02&sr=b&sig=nZhDKCXq8%2FZsPizuc34wzFZvNSIj3uHSssIyL%2B1NuSs%3D&st=2020-12-07T14%3A09%3A07Z&se=2020-12-07T22%3A19%3A07Z&sp=r",
+    "azureml-logs/process_info.json": "https://mlstrg129637.blob.core.windows.net/azureml/ExperimentRun/dcid.AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_27/azureml-logs/process_info.json?sv=2019-02-02&sr=b&sig=cCrQjCzGxPfXjK4cnl14FfyB9Ehq8E8pZQen%2FkfKDcQ%3D&st=2020-12-07T14%3A09%3A07Z&se=2020-12-07T22%3A19%3A07Z&sp=r",
+    "azureml-logs/process_status.json": "https://mlstrg129637.blob.core.windows.net/azureml/ExperimentRun/dcid.AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_27/azureml-logs/process_status.json?sv=2019-02-02&sr=b&sig=q8h68Al2rLFNc04YNF1BEDGWRrRXqjWwuHMuv%2BemTig%3D&st=2020-12-07T14%3A09%3A07Z&se=2020-12-07T22%3A19%3A07Z&sp=r",
+    "logs/azureml/100_azureml.log": "https://mlstrg129637.blob.core.windows.net/azureml/ExperimentRun/dcid.AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_27/logs/azureml/100_azureml.log?sv=2019-02-02&sr=b&sig=KNW3DwJCX%2FO5dWamZyoOzbUJYL1Mj%2Bb0vT2mHiM8otk%3D&st=2020-12-07T14%3A09%3A07Z&se=2020-12-07T22%3A19%3A07Z&sp=r",
+    "logs/azureml/azureml_automl.log": "https://mlstrg129637.blob.core.windows.net/azureml/ExperimentRun/dcid.AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_27/logs/azureml/azureml_automl.log?sv=2019-02-02&sr=b&sig=8Mjo8mBQidTW5CJRWRnQ3oqWcn7rh3P2gCnpjexSsgo%3D&st=2020-12-07T14%3A09%3A07Z&se=2020-12-07T22%3A19%3A07Z&sp=r",
+    "logs/azureml/dataprep/python_span_ad5cde9c-8364-4ea2-bb28-17387dc34ba9.jsonl": "https://mlstrg129637.blob.core.windows.net/azureml/ExperimentRun/dcid.AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_27/logs/azureml/dataprep/python_span_ad5cde9c-8364-4ea2-bb28-17387dc34ba9.jsonl?sv=2019-02-02&sr=b&sig=rL%2FzfVlbLGNNKk6x0t4qVMbNjj0XtTl4vexV22zpqv0%3D&st=2020-12-07T14%3A09%3A07Z&se=2020-12-07T22%3A19%3A07Z&sp=r",
+    "logs/azureml/dataprep/python_span_f711735e-e452-42b0-968f-d37d5b000249.jsonl": "https://mlstrg129637.blob.core.windows.net/azureml/ExperimentRun/dcid.AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_27/logs/azureml/dataprep/python_span_f711735e-e452-42b0-968f-d37d5b000249.jsonl?sv=2019-02-02&sr=b&sig=dg0PAac4LOPSTCHDX7aLXup65u4DnpHms%2FN1GyvArM4%3D&st=2020-12-07T14%3A09%3A07Z&se=2020-12-07T22%3A19%3A07Z&sp=r",
+    "logs/azureml/job_prep_azureml.log": "https://mlstrg129637.blob.core.windows.net/azureml/ExperimentRun/dcid.AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_27/logs/azureml/job_prep_azureml.log?sv=2019-02-02&sr=b&sig=6E%2FxMj0c0qi1YZhvTc3sb95arGLaqBQlbdNJgeAwdL8%3D&st=2020-12-07T14%3A09%3A07Z&se=2020-12-07T22%3A19%3A07Z&sp=r",
+    "logs/azureml/job_release_azureml.log": "https://mlstrg129637.blob.core.windows.net/azureml/ExperimentRun/dcid.AutoML_2b335b84-9bae-4dfc-a6ef-7c4d23ff7ad3_27/logs/azureml/job_release_azureml.log?sv=2019-02-02&sr=b&sig=Wxk%2Fs9B023ZDcPMhrqe8F2YC3%2BZ%2F5dFDntyUqzeqFQ8%3D&st=2020-12-07T14%3A09%3A07Z&se=2020-12-07T22%3A19%3A07Z&sp=r"
+  },
+  "revision": 16
+}
