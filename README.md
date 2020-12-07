@@ -62,5 +62,5 @@ The best model find by AutoML was the "VotingEnsemble" model with an accuracy of
 ![hyper](img/automl1.png)
 
 ## Future work
-* finetune the found parameters by HyperDrive more
+* fine tune the found parameters by HyperDrive more
 * use other parameters for HyperDrive like learning_rate or batch_size
