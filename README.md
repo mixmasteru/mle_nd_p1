@@ -10,7 +10,9 @@ This model is then compared to an Azure AutoML run.
 ### Data
 This dataset contains data about a marketing campaign of a bank. Its contains information about persons such as 
 job, marital, education, housing, loan and some more, 21 in total. The data is not complete and contains
-many "unknown" fields.  It was released by [kaggle](https://www.kaggle.com/henriqueyamahata/bank-marketing)
+many "unknown" fields.  It can be found at [UC Irvine Machine Learning Repository](http://archive.ics.uci.edu/ml/datasets/Bank+Marketing#)
+and was originally published for the paper ["A Data-Driven Approach to Predict the Success of Bank Telemarketing"](https://repositorio.iscte-iul.pt/bitstream/10071/9499/5/dss_v3.pdf)
+by Sergio Moro, Paulo Cortez and Paulo Rita.
 
 We seek to predict "y" which answers "Has the client subscribed a term deposit?" (binary: 'yes', 'no')
 
@@ -33,34 +35,46 @@ The best performing model was the "VotingEnsemble" model created by automl with 
  * run training
  * dump model
 
-**What are the benefits of the parameter sampler you chose?**
-I used RandomParameterSampling because I needed a way to put the hyperparameters c and max_iter to
-the train scrip. It's also easy to use as you can specify the hyperparameter range very easily.
+#### parameter sampler
+I used **RandomParameterSampling** because I needed a way to put the hyperparameters c and max_iter to
+the train scrip. The benefit of the RandomParameterSampling is that enables a random selection from a search
+space which helps to identify low performing models for saving time and money by an early termination of these. 
+I used uniform(0.1, 2.0) for C which is a continuous hyperparameter search, the interval 0.1,2.0 is 
+around the default of 1.0.
 
-**What are the benefits of the early stopping policy you chose?**
-I used the BanditPolicy as I can provide a threshold (slack_factor) for the allowable slack as a ration 
-but also can use the delay_evaluation to avoid premature termination of training runs.
+For max_iter I used the discrete search by choice(50, 100, 250) which look like a good starting point.
+
+#### early stopping policy
+I used the **BanditPolicy** as it can provide a threshold (slack_factor) for the allowable slack as a ration 
+but also can use the delay_evaluation to avoid premature termination of training runs. This helps to 
+terminate bad performing runs and improves efficiency.
 
 ![hyper](img/hyper.png)
 
 ## AutoML
+config:
+* experiment_timeout_minutes=30
+* primary_metric='accuracy'
+* target label_column_name='y',
+* n_cross_validations=5
+
 The best model find by AutoML was the "VotingEnsemble" model with an accuracy of 
-0.9176357880688271 with 
- * training_type: "MeanCrossValidation"
- * primary_metric: "accuracy"
+0.9176357880688271. VotingEnsemble uses multiple models and votes on the predictions of
+these to get a final prediction. It uses LightGBMClassifier, XGBoostClassifier, SGDClassifier and some more,
+check the [model.txt](outputs/model.txt) file with a print of the VotingEnsemble for more details.
 
 
 ![hyper](img/automl2.png)
 
 ## Pipeline comparison
-* booth approaches need a cleanup of the data beforehand
-* the setup for automl is much shorter than for HyperDrive
-* AutoML needed longer to find the model
-* accuracy of both is nearly the same
-* AutoML shows thar duration is an important feature
+For booth approaches we use a cleanup of the data beforehand, but AutoML could to this as well. 
+The setup for AutoML is much shorter than for HyperDrive, but it needed longer to find the best model.
+The accuracy of both is nearly the same. AutoML shows that duration is the most important feature.
 
 ![hyper](img/automl1.png)
 
 ## Future work
-* fine tune the found parameters by HyperDrive more
-* use other parameters for HyperDrive like learning_rate or batch_size
+Try to fine tune the found parameters by HyperDrive more or use other hyperparameter 
+like learning_rate, batch_size to increase the accuracy.
+Increase the timeout of AutoML to give it more time to tryout different types of models and
+hyperparameters with better accuracy.
